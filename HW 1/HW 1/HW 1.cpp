@@ -5,8 +5,8 @@
 #include<string>
 using namespace std;
 
-void ex02();
-void ex03();
+//void ex02();
+//void ex03();
 void ex04();
 
 int main()
@@ -150,5 +150,30 @@ void ex04()
 		cin >> between_one_and_ten;
 
 	}
+	//create sum of cubes variable
+	int sum_of_cubes = 0;
 
+	//create loop to calculate sum of cubes
+	for (int i = 0; i <= between_one_and_ten; i++)
+	{
+		//create variable to hold/ add ongoing sum of cubes
+		int cubing = (i * i * i);
+		sum_of_cubes += cubing;
+	}
+	//check correctness 
+	cout << sum_of_cubes << endl << endl;
+
+	//output number of asterisks as between one and ten
+	int j = 0;
+	do
+	{
+		cout << " * ";
+		j++;
+	} while (j <= between_one_and_ten);
+
+	for (int i = 0; i <= 40; i++)
+	{
+		if (i % 2 == 0)
+			cout << " " << i << " ";
+	}
 }
