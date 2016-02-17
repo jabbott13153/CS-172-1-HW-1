@@ -1,3 +1,7 @@
+// Author: Julia Abbott
+// Purpose: Answer HW 1 Questions
+//NOTE: Ex01 is answered at end of code
+
 #include<iostream>
 #include<ctime>
 #include<cmath>
@@ -311,3 +315,15 @@ void ex05()
 	//call function that will check to see if a particular integer is stored within the value_store array
 	checking_values(value_store, SIZE);
 }
+
+
+/*Ex01 answers
+a.) CPU core
+b.) RAM
+c.) i
+d.) v
+e.) unique address
+f.) 8
+g.) iv
+h.) ii 
+*/
