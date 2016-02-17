@@ -8,16 +8,19 @@ using namespace std;
 //void ex02();
 //void ex03();
 void ex04();
+void ex05();
 void integer_doubling(int);
 void add(int, int);
 void adding_one(int&);
+void outputting_values(int list[], int size_of_list);
+void checking_values(int list[], int size_of_list);
 
 int main()
 {
 	//ex02();
 	//ex03();
-	ex04();
-	
+	//ex04();
+	ex05();
 	return 0;
 }
 
@@ -142,7 +145,7 @@ void ex03()
 void integer_doubling(int placeholder)
 {
 	int doubling = placeholder * 2;
-	cout << placeholder << " doubled is: " << doubling << endl;
+	cout << placeholder << " doubled is: " << doubling << endl << endl;
 }
 
 //function to add together the sum of two inputted arguments
@@ -221,4 +224,90 @@ void ex04()
 
 	//calling function that will add one to argument
 	adding_one(x);
+}
+
+//function to take array and size of array as an argument, and then prints out the values of the array
+void outputting_values(int list[], int size_of_list)
+{
+	for (int i = 0; i < size_of_list; i++)
+	{
+		cout << " " << list[i];
+	}
+	cout << endl << endl;
+}
+
+//function to take array, array size, and an integer. Will check if the integer is contained within the array.
+void checking_values(int list[], int size_of_list)
+{
+	int number = 0;
+	cout << "Please enter an integer: \n";
+	cin >> number;
+	for (int i = 0; i < size_of_list; i++)
+	{
+		if (number == list[i])
+		{
+			cout << number << " is contained within the array. \n\n";
+			break;
+		}
+		else
+			cout << number << " is not contained within the array. \n\n";
+	}
+}
+void ex05()
+{
+	//create loop that asks for 5 integers, and then stores the values in an array
+	//creating array for said values to be stored in
+	int value_store[5];
+
+	//variable that stores size of value_store array; constant
+	const int SIZE = 5;
+
+	//create value to store user input
+	int number;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Please enter an integer: \n";
+		cin >> number;
+		value_store[i] = number;
+	}
+
+	//checking to make sure loop works
+	/*for (int i = 0; i < 5; i++)
+	{
+		cout << " " << value_store[i] << " ";
+
+	}*/
+
+	//calculates sum and products of the values sotred in the array, and then outputs results
+
+	//value to store total sum in
+		int sum = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		//adds all numbers together
+		
+		sum += value_store[i];
+		if (i == 4)
+			cout << "The total sum is: " << sum << endl << endl;
+	}
+
+
+//value to store total product in
+		int product = 1;
+
+
+	for (int i = 0; i < 5; i++)
+	{
+		//multiplies all numbers together
+		
+		product *= value_store[i];
+		if (i == 4)
+			cout << "The total product is: " << product << endl << endl;
+	}
+
+	//call function that will print out all the values stored in value_store array
+	outputting_values(value_store, SIZE);
+
+	//call function that will check to see if a particular integer is stored within the value_store array
+	checking_values(value_store, SIZE);
 }
