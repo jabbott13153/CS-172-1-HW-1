@@ -8,12 +8,16 @@ using namespace std;
 //void ex02();
 //void ex03();
 void ex04();
+void integer_doubling(int);
+void add(int, int);
+void adding_one(int&);
 
 int main()
 {
 	//ex02();
 	//ex03();
 	ex04();
+	
 	return 0;
 }
 
@@ -134,6 +138,27 @@ void ex03()
 	string empty = " ";
 }
 
+//function to double argument
+void integer_doubling(int placeholder)
+{
+	int doubling = placeholder * 2;
+	cout << placeholder << " doubled is: " << doubling << endl;
+}
+
+//function to add together the sum of two inputted arguments
+void add(int number_1, int number_2)
+{
+	int sum = number_1 + number_2;
+	cout << number_1 << " + " << number_2 << " = " << sum << endl << endl;
+}
+
+//function to add one to its argument
+void adding_one(int& number_1)
+{
+	int sum = number_1 + 1;
+	cout << number_1 << " + 1 is: " << sum << endl << endl;
+}
+
 void ex04()
 {
 	//intitializing variable for number between one and ten
@@ -164,16 +189,36 @@ void ex04()
 	cout << sum_of_cubes << endl << endl;
 
 	//output number of asterisks as between one and ten
-	int j = 0;
+	int j = 1;
 	do
 	{
 		cout << " * ";
 		j++;
 	} while (j <= between_one_and_ten);
+	cout << endl << endl;
 
-	for (int i = 0; i <= 40; i++)
+	//print out only the even numbers between one and forty
+	for (int i = 0; i < 41; i++)
 	{
 		if (i % 2 == 0)
 			cout << " " << i << " ";
 	}
+
+	cout << endl << endl;
+//call function that doubles its argument
+	integer_doubling(between_one_and_ten);
+
+	//setting up variables for function that will add two random numbers together
+	int x, y = 0;
+
+	//setting up the random numbers for x and y
+	srand(time(0));
+	x = rand() % 100;
+	y = rand() % 100;
+
+	//calling function that will add x and y together.
+	add(x, y);
+
+	//calling function that will add one to argument
+	adding_one(x);
 }
